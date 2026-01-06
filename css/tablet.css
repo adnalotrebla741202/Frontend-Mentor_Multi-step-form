@@ -1,0 +1,73 @@
+/* ===============================
+   TABLET STYLES
+   Max width: 900px
+   =============================== */
+
+.app {
+  width: 100%;
+  height: auto;
+  margin: 20px;
+}
+
+/* Sidebar sigue visible */
+.sidebar {
+  width: 220px;
+  padding: 20px;
+}
+
+.content {
+  padding: 30px;
+}
+
+/* ===== STEP 2: PLANES ===== */
+.plans {
+  flex-direction: column;
+}
+
+.plan {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 6px;
+  align-items: start;
+}
+
+.plan img {
+  grid-row: 1 / span 2;
+  margin-bottom: 0;
+}
+
+.plan h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.plan .price {
+  margin: 0;
+  font-size: 14px;
+}
+
+.plan .free {
+  grid-column: 2;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ===== STEP 3 ===== */
+.addon-option {
+  padding: 18px;
+}
+
+.addon-info strong {
+  font-size: 14px;
+}
+
+.addon-info span {
+  font-size: 13px;
+}
+
+.addon-price {
+  font-size: 13px;
+}

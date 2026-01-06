@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #eef5ff;
+  min-height: 100vh;
+}
+
+/* 🔹 CONTENEDOR PRINCIPAL CON ALTURA FIJA */
+.app {
+  max-width: 940px;
+  height: 600px; /* 👈 altura fija como diseño Desktop */
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 270px;
+  padding: 30px;
+  color: white;
+
+  /* 🔹 FONDO FIJO */
+  background-image: url("../assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  /* 🔹 ALTURA FIJA */
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.step-indicator {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.step-indicator.active {
+  opacity: 1;
+}
+
+.step-indicator span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== STEPS ===== */
+.step {
+  display: none;
+  flex: 1;
+}
+
+.step.active {
+  display: block;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+/* STEP 1 */
+.form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* STEP 2 */
+.plans {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.plan {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 140px;
+  cursor: pointer;
+}
+
+.plan.active {
+  border-color: #483eff;
+  background: #f8f9ff;
+}
+
+.plan img {
+  margin-bottom: 40px;
+}
+
+.plan .price {
+  color: #777;
+}
+
+.plan .free {
+  display: none;
+  font-size: 12px;
+  color: #483eff;
+}
+
+.plan.yearly .free {
+  display: block;
+}
+
+/* Toggle */
+.billing-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: #f8f9ff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.billing-label.active {
+  font-weight: bold;
+  color: #483eff;
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #483eff;
+  border-radius: 20px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 4px;
+  transition: .3s;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* ===== STEP 3 ===== */
+.addon-option {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d6d9e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.addon-option input {
+  display: none;
+}
+
+.addon-info span 
+{
+  display: block;
+  color: #9699ab;
+  font-size: 14px;
+}
+
+.addon-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d6d9e6;
+  border-radius: 4px;
+  margin-right: 20px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addon-checkbox::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  display: none;
+}
+
+.addon-option input:checked + .addon-checkbox {
+  background-color: #483eff;
+  border-color: #483eff;
+}
+
+.addon-option input:checked + .addon-checkbox::after {
+  display: block;
+}
+
+.addon-price {
+  margin-left: auto;
+  color: #483eff;
+}
+
+/* ===== STEP 4 ===== */
+.summary-box {
+  background: #f8f9ff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.summary-plan {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d6d9e6;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.summary-plan-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.change-plan {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  color: #9699ab;
+  text-decoration: underline;
+  cursor: pointer;
+  display: flex;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.summary-total strong {
+  color: #483eff;
+  font-size: 18px;
+}
+
+.summary-addons div 
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #9699ab;
+  margin-bottom: 10px;
+}
+
+.summary-price 
+{
+  font-weight: bold;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+#nextBtn {
+  background: #483eff;
+  color: white;
+}
+
+/* ===== THANK YOU STEP ===== */
+.step.active.thank-you-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you {
+  text-align: center;
+  max-width: 460px;
+}
+
+.thank-you img {
+  width: 80px;
+  margin-bottom: 32px;
+}
+
+.thank-you h1 {
+  color: #02295a;
+  margin-bottom: 16px;
+}
+
+.thank-you p {
+  color: #9699ab;
+  line-height: 1.6;
+}

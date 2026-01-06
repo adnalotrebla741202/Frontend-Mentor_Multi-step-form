@@ -1,0 +1,64 @@
+/* =====================================================
+   LARGE TABLET FIXES – DEFINITIVE
+   iPad Mini, iPad Air, Zenbook Fold
+   768px – 900px
+   ===================================================== */
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+
+.app {
+  align-items: stretch;
+  height: auto;
+}
+
+/* ===== SIDEBAR =====
+   Altura constante en todos los pasos
+   ========================== */
+
+.sidebar {
+  height: auto;
+  min-height: calc(100vh - 450px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== CONTENT =====
+   Grid para fijar botones siempre en la misma altura
+   ========================== */
+
+.content {
+  display: grid;
+  grid-template-rows: 1fr auto; /* 👈 clave */
+  min-height: 100%;
+}
+
+/* ===== STEP =====
+   Contenido del paso ocupa la zona superior
+   ========================== */
+
+.step {
+  min-height: 0;
+}
+
+/* ===== SUMMARY =====
+   Espacio antes de botones
+   ========================== */
+
+.summary-total {
+  margin-bottom: 32px;
+}
+
+/* ===== BOTONES =====
+   Siempre en la misma altura en TODOS los pasos
+   ========================== */
+
+.buttons {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+/* ===== AJUSTE PREVENTIVO ===== */
+
+body {
+  overflow-x: hidden;
+}
