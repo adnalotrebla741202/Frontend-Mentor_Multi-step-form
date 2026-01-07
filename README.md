@@ -1,7 +1,7 @@
 <h1>Reto de desarrollo de un formulario multipasos de FrontEnd Mentor</h1>
 <h2>Descripción del proyecto</h2>
 El proyecto es una <b>solución al desafío “Multi-step form” de Frontend Mentor</b>, es decir, <b>un formulario web de varios pasos (wizard)</b> donde el usuario va avanzando paso a paso para completar información y elegir opciones antes de enviar o confirmar. 
-Específicamente:
+<br>Específicamente:
 <ul>
   <li><b>Paso 1 – Your Info:</b> Pide al usuario sus datos personales (nombre, email, teléfono).</li>
   <li><b>Paso 2 – Select Plan:</b> Permite seleccionar un plan (por ejemplo “Arcade”, “Advanced” o “Pro”) y escoger facturación mensual o anual.</li>
